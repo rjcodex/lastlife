@@ -19,6 +19,11 @@ prevBtn.onclick = function() {
     moveSlider('prev')
 }
 
+// Automatically move the slider every 2 seconds
+setInterval(() => {
+    moveSlider('next');
+}, 5000); // 2000 milliseconds = 2 seconds
+
 
 function moveSlider(direction) {
     let sliderItems = sliderList.querySelectorAll('.item')
