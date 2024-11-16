@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <div class="preloader">
+      <div class="spinner"></div>
+    </div>
+    
     <div class="containertb">
       <button class="bottom-button" id="bottomButton">
         <img src="images/top.png" alt="" />
@@ -290,21 +294,7 @@
         <img src="images/" alt="lastlife" class="lfa2-img" />
       </div>
     </div>
-
-    <!--------------------------- ABOUT SECTION END ------------------------------->
-
-    <!-- <div class="sponsor-bar">
-  <p>SPONSORED BY</p>
-  <div class="sponsors-wrapper">
-  <div class="sponsors">
-    <img src="images/facebook2.png" alt="Facebook">
-    <img src="images/twitch.png" alt="Twitch">
-    <img src="images/youtube.png" alt="YouTube">
-    <img src="images/Discord.png" alt="Discord">
-  </div>
-  </div>
-</div>
-<hr style="width: 1200px;"> -->
+    
 
     <section class="newsletter-section">
       <div class="newsletter-overlay">
@@ -333,6 +323,32 @@
     <script src="js/script.js"></script>
 
     <script>
+
+
+    let navbar = document.querySelector('nav');
+let menuLinks = document.getElementById("menu-links");
+
+function toggleMenu() {
+  menuLinks.classList.toggle('show-menu');
+}
+
+window.onscroll = function() {
+  if (window.scrollY > 0) {
+    navbar.style.background = '#eefff9';
+  } else {
+    navbar.style.background = 'transparent';
+  }
+};
+
+// Smooth fade-out after 1 second
+window.addEventListener('load', function() {
+  var preloader = document.querySelector('.preloader');
+  // Delay of 1 second (1000 milliseconds)
+  setTimeout(function() {
+    preloader.classList.add('preload-finish');
+  }, 1000); // Adjust the duration here
+});
+
       document.addEventListener("DOMContentLoaded", () => {
         // Set the scroll amount (how far it scrolls when clicking a button)
         const scrollAmount = 300;
